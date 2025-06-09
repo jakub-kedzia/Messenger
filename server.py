@@ -23,15 +23,15 @@ def handle_client(client_socket):
                     "message": data["message"]
                 }
                 client_queues[data["receiver"]].put(message_object)
-                print("Przyjeto wiadomosc \n")
+                print("Message accepted. \n")
             else:
                 message_object = {
                     "sender": "Serwer",
-                    "message": "Nie istnieje taki odbiorca. \n"
+                    "message": "No such person is logged in. \n"
                 }
                 message_json = json.dumps(message_object)
                 client_socket.send(message_json.encode())
-                print("Nie ma takiego uzytkownika w bazie \n")
+                print("No such person is logged in. \n")
 
         if data["request"] == "login":
             client_queues[name] = queue.Queue()

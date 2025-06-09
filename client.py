@@ -23,14 +23,13 @@ def send_message(client, receiver, sender):
 
         if (message.startswith("\\addr")):
             receiver = message[5:]
-            print("Zmieniono odbiorce na ", receiver, "\n")
-            # send_message(client, receiver, sender)
+            print("Recipient set to ", receiver, "\n")
             continue
         elif message == "\\curr":
             if receiver == "":
-                print("Aktualnie nie rozmawiasz z nikim. \n")
+                print("No recipient set currently. \n")
             else:
-                print("Aktualnie rozmawiasz z ", receiver, "\n")
+                print("Current recipient is ", receiver, "\n")
             continue
         elif message == "\\quit":
             if input("Are you sure you want to quit the app? Y/n \n") == 'Y':
@@ -41,7 +40,7 @@ def send_message(client, receiver, sender):
             continue
 
         if (receiver == ""):
-            receiver = input("Nie wybrano zadnego rozmowcy, z kim chcesz porozmawiac? \n")
+            receiver = input("No recipient chosen, who would you like to talk to? \n")
 
         data = {
             "request": "message",
@@ -60,7 +59,7 @@ def start_client():
     receiving_thread = threading.Thread(target=receive_message, args=(client,))
     receiving_thread.start()
 
-    name = input("Jak masz na imie? \n")
+    name = input("What is your name? \n")
     name.strip()
     login_request = {
         "request": "login",
