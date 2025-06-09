@@ -20,7 +20,7 @@ Multithreaded client-server app for texting
         2. curr - służy do wyświetlenia nazwy użytkownika aktualnego rozmówcy,
         3. quit - służy do zamknięcia programu
 
-7. Lista wątków:
+2. Lista wątków:
 
     1. Wątek odbierający wiadomości w części klienckiej - nasłuchuje wiadomości przychodzących ze strony serwerowej
     2. Wątek wysyłający wiadomości w części klienckiej -  pobiera dane tekstowe od użytkownika, odpowiada za
@@ -29,7 +29,7 @@ Multithreaded client-server app for texting
        zavkomunikację z jednym, konkretnym klientem zalogowanym do serwera, a także za zarządzanie kolejką wiadomości
        dla tego klienta przeznaczonych.
 
-8. Problemy, których nie udało się, jak dotąd, rozwiązać:
+3. Problemy, których nie udało się, jak dotąd, rozwiązać:
    
     1. Opóźnione wyświetlanie przychodzących wiadomości w oknie klienta - Pomimo zastosowania osobnych wątków do
        wyświetlania oraz pobierania tekstu, nie udało się osiągnąć efektu odbierania wiadomości w czasie rzeczywistym.
@@ -38,7 +38,7 @@ Multithreaded client-server app for texting
        pracy klienta.
     4. Niewyświetlanie odebranych z serwera wiadomości przez klienta, jeśli nie jest wybrany rozmówca.
 
-9. Potencjalne usprawnienia
+4. Potencjalne usprawnienia:
 
     1. W przypadku braku wybranego rozmówcy, automatyczne ustawienie rozmówcy po stronie klienta, po otrzymaniu wiadomości
        od innego klienta.
